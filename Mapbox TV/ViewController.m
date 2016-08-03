@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Mapbox.h"
+@import Mapbox;
 
 @interface ViewController () <MGLMapViewDelegate>
 
@@ -31,7 +31,6 @@
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         MGLMapCamera *camera = [MGLMapCamera cameraLookingAtCenterCoordinate:CLLocationCoordinate2DMake(37.7757158, -122.4136878) fromDistance:100000 pitch:60 heading:180];
-        
         [self.mapView setCamera:camera withDuration:10.f animationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
     });
 }
